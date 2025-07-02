@@ -1,8 +1,10 @@
 # The Two Sum leetcode problem
 
-The two sum problem is a problem which takes an array and a target and attempts to determine which index values when added together can equal the target number. This problem is meant to test the user's understanding of indexing, loops and algorithmic thinking. The below is solutions I came up with for these problems and the mathmatecal advantages to each solution. 
+The two sum problem is a problem which takes an array and a target and attempts to determine which index values when added together can equal the target number. This problem is meant to test the user's understanding of indexing, loops and algorithmic thinking. The below is solutions I came up with for these problems and the advantages to each solution. 
 
 ## Brute force 
+
+The brute force method of solving the two sum leetcode problem specifically focuses on testing every position within the array until we arrive at the positions that equal the target. This method is a great simple way to solve this problem and works well when an array is shorter. 
 
 ### High-Level Steps:
 
@@ -16,6 +18,7 @@ The two sum problem is a problem which takes an array and a target and attempts 
 
 ~~~
 class Solution:
+#This defines the class called solution 
     def twoSum(self, nums: List[int], target: int) -> List[int]:
     #The range length function out puts the index specified
     #they are then assigned to the variable x and y
@@ -30,8 +33,8 @@ class Solution:
 ~~~
 
 ```mermaid
-graph TD
-start--> 
+flowchart TD
+start([Start the outer loop]) 
 ```
 
 
