@@ -61,6 +61,23 @@ The hashmap method of solving the two sum leetcode problem focuses on efficiency
 3. **Initiate second loop**: Create complement 
 4. **Initiate Search for complement**:
 5. **Return Two Sum Indexes**:
+~~~
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
+        for ind,val in enumerate(nums):
+            hashmap[val] = ind
+            complement = target - val
+            if complement in hashmap:
+                test = ind + 1
+                if hashmap[val] != hashmap[complement]: 
+                    return [hashmap[complement], hashmap[val]]
+                # Addresses edge case of index* itself [3,2,4]
+                #creates end of dictionary issue without a match.[3,3]
+                else:
+                    continue
+~~~
+
 
 ~~~
 #Python Solution 
