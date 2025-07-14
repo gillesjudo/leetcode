@@ -16,8 +16,9 @@ The brute force method of solving the two sum leetcode problem specifically focu
 6. **Advance the Outer Loop**: Once the inner loop finishes without finding a match, the outer loop advances to the next element in the array (e.g., to index 1). This new element becomes the first number for a new set of pairs.
 7. **Repeat the Entire Process**: A new inner loop begins again from the element following the new position of the outer loop. This entire process (Steps 2-6) repeats until a match is found.
 
+### Python Solution 
+
 ~~~
-#Python Solution
 class Solution:
 #This defines the class called solution 
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -33,6 +34,11 @@ class Solution:
                         return [x,y]
 ~~~
 
+### Golang Solution 
+
+~~~
+~~~          
+### Diagram Steps 
 ```mermaid
 flowchart TD
     A(Start) --> B[/Get array and target/];
@@ -51,6 +57,8 @@ flowchart TD
 
 ### Brute Force Big O Calculation
 
+---
+
 ## Hashmap 
 The hashmap method of solving the two sum leetcode problem focuses on efficiency as a means of solving this problem. We first initialize the dictionary with the array values as the keys and the array indexes as the values. We find the complement which would be the target value subtracted by the current value to determine one half of the addition that will equal the target. That way we can stop prior to getting to the end of the dictionary once we find the two values that add up to the target. Moreover, the speed of the lookup is much faster because it does not need to iterate through each value it just needs to find the complement. 
 
@@ -61,43 +69,30 @@ The hashmap method of solving the two sum leetcode problem focuses on efficiency
 3. **Initiate second loop**: Create complement 
 4. **Initiate Search for complement**:
 5. **Return Two Sum Indexes**:
+
+### Python Solution 
+
 ~~~
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashmap = {}
-        for ind,val in enumerate(nums):
-            hashmap[val] = ind
-            complement = target - val
-            if complement in hashmap:
-                test = ind + 1
-                if hashmap[val] != hashmap[complement]: 
-                    return [hashmap[complement], hashmap[val]]
-                # Addresses edge case of index* itself [3,2,4]
-                #creates end of dictionary issue without a match.[3,3]
-                else:
-                    continue
+      # Initialize the hashmap 
+      hashmap = {}
+      for ind,val in enumerate(nums):
+        complement=target-val
+        # Create the complement off of the target
+        if complement in hashmap:
+        #Search the complemnt in the hashmap
+            return [ind, hashmap[complement]]
+        else:
+            hashmap[val]=ind    
 ~~~
 
+### Golang Solution 
 
 ~~~
-#Python Solution 
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashmap = {}
-        #initialize Hashmap
-        for ind,val in enumerate(nums):
-            hashmap[val] = ind
-            #Create hashmap and fill values  
-        for x,y in enumerate(nums):
-            complement = target - y
-            #Create complement which would be one of the values in the addition 
-            if complement in hashmap:
-                if x == hashmap[complement]:
-                #Prevent addition between two values in the same index position 
-                   continue
-                else:
-                     return [x, hashmap[complement]]
-~~~
+~~~          
+
+### Diagram Steps
 
 ```mermaid
 flowchart TD
@@ -105,3 +100,9 @@ flowchart TD
 ```
 
 ### Big O Calculation
+
+Big O notation allows us to determine whether the algorithm is efficient enough to address the problem  
+
+### Brute Force 
+
+### Hashmap
