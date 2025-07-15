@@ -65,10 +65,10 @@ The hashmap method of solving the two sum leetcode problem focuses on efficiency
 ### High-Level Steps:
 
 1. **Build the Hashmap**: We first initialize the hashmap 
-2. **Iterate array values through hashmap**:
-3. **Initiate second loop**: Create complement 
-4. **Initiate Search for complement**:
-5. **Return Two Sum Indexes**:
+2. **Iterate array values through hashmap**: Populate the hashmap with the values of the array and the index. 
+3. **Create Complement**: Create complement by subtracting the target from the current value. 
+4. **Initiate Search for complement**: If the complement is in the dictionary at this point, return the current index and the hashmap key that is associated with the complement value. 
+5. **Return Two Sum Indexes**: Once it finds the complement it prints both the current index value and the complement which added together equals the target.  
 
 ### Python Solution 
 
@@ -97,6 +97,13 @@ class Solution:
 ```mermaid
 flowchart TD
 
+A(Start) --> B[/Get array and target/]
+B --> C[/Step 1: Initialize the hashmap /]
+C --> D[/Step 2: Iterate array values through hashmap/]
+D --> E[/Step 3: Create the complement/]
+E --> F[/Step 4: Initiate search for complement/]
+F -- Yes --> G[/Step 5: Return the two sum indexes/]
+F -- No --> D;
 ```
 
 ### Big O Calculation
