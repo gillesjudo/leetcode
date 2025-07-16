@@ -36,8 +36,10 @@ class Solution:
 
 ### Golang Solution 
 
+
 ~~~
-~~~          
+~~~     
+     
 ### Diagram Steps 
 ```mermaid
 flowchart TD
@@ -57,8 +59,10 @@ flowchart TD
 
 ### Brute Force Big O Calculation
 
----
+The calculation for the brute force solution is *$O(n^2)$*. This is due to the solution performing nested loops.
 
+---
+---
 ## Hashmap 
 The hashmap method of solving the two sum leetcode problem focuses on efficiency as a means of solving this problem. We first initialize the dictionary with the array values as the keys and the array indexes as the values. We find the complement which would be the target value subtracted by the current value to determine one half of the addition that will equal the target. That way we can stop prior to getting to the end of the dictionary once we find the two values that add up to the target. Moreover, the speed of the lookup is much faster because it does not need to iterate through each value it just needs to find the complement. 
 
@@ -108,8 +112,4 @@ F -- No --> D;
 
 ### Big O Calculation
 
-Big O notation allows us to determine whether the algorithm is efficient enough to address the problem  
-
-### Brute Force 
-
-### Hashmap
+The calculation for the brute force solution is *$O(n)$*. This is due to the solution performing nested loops.
