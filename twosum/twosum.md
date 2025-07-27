@@ -38,6 +38,17 @@ class Solution:
 
 
 ~~~
+func twoSum(nums []int, target int) []int {
+    for x := range nums {
+        for y := x+1; y < len(nums) ; y++ {
+            sums := nums[x] + nums[y]
+            if sums == target{
+                return []int{x,y}
+            }
+        }
+    }
+    return nil
+}
 ~~~     
      
 ### Diagram Steps 
@@ -94,6 +105,25 @@ class Solution:
 ### Golang Solution 
 
 ~~~
+func twoSum(nums []int, target int) []int {
+    hashmap := make(map[int]int)
+    // initialize Hashmap 
+    for ind, val:= range(nums) {
+        complement := target - val
+        // Create Complement prior to creating the hashmap 
+        compin, ok := hashmap[complement]
+        // if complement is present in the hashmap 
+         if ok {
+           return []int{compin, ind}
+           // return current index and complement index 
+        } else { 
+            hashmap[val] = ind
+            continue;
+            // if values not found add values to the hashmap and continue
+        }
+    }
+    return []int{}
+} 
 ~~~          
 
 ### Diagram Steps
