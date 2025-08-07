@@ -45,7 +45,7 @@ start --> Define_variables
 Define_variables --> loop[/Initialize loop\]
 loop --> rev[\reverse integer/]
 rev --> con[if integer equals reversed integer]
-con --if yes--> true[return true]
+con --if yes--> true[is palindrome return true]
 con --else--> false[return false]
 ```
 
