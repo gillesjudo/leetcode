@@ -5,18 +5,22 @@ The palindrome problem is essentially a reverse the interger problem. A palindro
 ## The "Reversing The Number" Solution 
 The method I used to solve this problem was utilizing modulo math and division by 10 in order to strip off the individual digits and then recreate the integer in a reversed fashion. This method is an iterative method that can handle negatives, numbers ending in 0 and other values that are definetly not palindromes. 
 
-### High-Level Steps:
-1. **Define Variables**: Initalize the variables that will move by 10s place, the variable that will be stripped off using modulo and the variable to house the reversed integer.  
-2. **Loop Creation**: We create our loop to act while the number shriking by 10s place is greater than 0. 
-3. **Iterate Loop**: While we loop through the variable we strip off the final character and add it to the reversed integer variable. This happens until all 10s places are exhauseted. 
-4. **Validate Palindrome**: We perform a check that if the reversed integer is equivalent to the initial integer we know it is a palindrome and we return `true` and if it is not we return `false`. 
-### Golang Solution 
-
 ~~~
-func isPalindrome(x int) bool {
-    strip := x
-// This strips the final character off to start building the reversed number. 
+import (
+    "fmt"
+    "math"
+)
+
+func isPalindrome(x int) bool { 
+    int32MaxFloat := math.Pow(2, 31) - 1
+// This var is to prevent an integer overflow, if x is int64 it is not needed.
+    int32Max := int(int32MaxFloat) 
     place := x
+    strip := 0
+    if x >= int32Max{
+        fmt.Println("Error that is above the cap for this program")
+        return false
+    }
 // This is meant to be the var that moves from hundreds, tens, to ones  
     rev := 0
 // rev reconstructs the number in reverse going place by place
@@ -36,8 +40,17 @@ func isPalindrome(x int) bool {
         return false
     }
 }
-~~~     
-     
+~~~   
+### The integer overflow problem
+The problem with the full reversing of `x` is that the `var`used to reverse the integer stores a full reversal of `x` and being that in this problem `x` is an `int32` integer 
+it has a cap of $2^{31}$ - 1. That means that if a user inputs an integer greater than or equal to $2^{31}$ -1 the program will crash.This is why I input a check to prevent the overflow from crashing my program unpredictably. 
+
+### High-Level Steps:
+1. **Define Variables**: Initalize the variables that will move by 10s place, the variable that will be stripped off using modulo and the variable to house the reversed integer.  
+2. **Loop Creation**: We create our loop to act while the number shriking by 10s place is greater than 0. 
+3. **Iterate Loop**: While we loop through the variable we strip off the final character and add it to the reversed integer variable. This happens until all 10s places are exhauseted. 
+4. **Validate Palindrome**: We perform a check that if the reversed integer is equivalent to the initial integer we know it is a palindrome and we return `true` and if it is not we return `false`. 
+
 ### Diagram Steps 
 ```mermaid
 flowchart TD
@@ -48,7 +61,22 @@ rev --> con[if integer equals reversed integer]
 con --if yes--> true[is palindrome return true]
 con --else--> false[return false]
 ```
+## The "Half Reversal" Solution
 
+~~~
+func isPalindrome(x int) bool {
+    if x < 0 || (x % 10 == 0 && x != 0) {
+        return false
+    }
+
+    rev := 0
+    for x > rev {
+        rev = rev * 10 + x%10
+        x /= 10
+    }
+    return x == rev || x == rev/10
+}
+~~~
 ### Big O Calculation
 
 ### Cybersecurity Tie In 
