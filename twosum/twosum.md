@@ -49,11 +49,13 @@ func twoSum(nums []int, target int) []int {
     }
     return nil
 }
-~~~  
+
+~~~
 
 ### Javascript Solution
-     ~~~
-     /**
+
+```
+/**
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
@@ -68,7 +70,7 @@ var twoSum = function(nums, target) {
         }
     }
 };
-     ~~~
+```
 ### Diagram Steps 
 ```mermaid
 flowchart TD
@@ -88,7 +90,7 @@ flowchart TD
 
 ### Brute Force Big O Calculation
 
-The calculation for the brute force solution is *$O(n^2)$*. This is due to the solution performing nested loops.
+The calculation for the brute force solution is *$o(n^2)$*. This is due to the solution performing nested loops.
 
 ---
 ---
@@ -144,6 +146,8 @@ func twoSum(nums []int, target int) []int {
 } 
 ~~~          
 ### Javascript Solution 
+
+~~~
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -165,7 +169,6 @@ var twoSum = function(nums, target) {
 };
 ~~~
 
-~~~
 ### Diagram Steps
 
 ```mermaid
@@ -182,4 +185,4 @@ F -- No --> D;
 
 ### Big O Calculation
 
-The calculation for the brute force solution is *$O(n)$*. This is due to the solution performing nested loops.
+The calculation for the brute force solution is *$o(n)$*. This is due to the solution performing nested loops.
