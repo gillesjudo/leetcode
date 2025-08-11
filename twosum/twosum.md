@@ -49,8 +49,26 @@ func twoSum(nums []int, target int) []int {
     }
     return nil
 }
-~~~     
-     
+~~~  
+
+### Javascript Solution
+     ~~~
+     /**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    for (let x = 0; x < nums.length; x++) {
+        for (let y = x + 1; y < nums.length; y++) {
+            let sums = nums[y] + nums[x]
+            if (sums == target) {
+                return [x,y] 
+            }
+        }
+    }
+};
+     ~~~
 ### Diagram Steps 
 ```mermaid
 flowchart TD
@@ -125,7 +143,29 @@ func twoSum(nums []int, target int) []int {
     return []int{}
 } 
 ~~~          
+### Javascript Solution 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let hashmap = {};
+    
+    for (const [ind, val] of nums.entries()) {
+       // console.log(ind, val);
+        complement = target - val; 
+        // console.log(complement);
+        if (complement in hashmap) {
+            return [hashmap[complement], ind];
+        } else {
+            hashmap[val]=ind;
+        }
+    }
+};
+~~~
 
+~~~
 ### Diagram Steps
 
 ```mermaid
