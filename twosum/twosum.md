@@ -92,10 +92,13 @@ flowchart TD
 
 The calculation for the brute force solution is $O(n^2)$ . This is due to the solution performing 2 separate nested loops. This means that the greater the size of the array the longer the program will take to complete. This is quadratic time so this can take an exponential amount longer depending on the size of the array. This is the primary drawback of this method depending on how fast you need this specific solution to run. If you know you are dealing with larger arrays from the outset this is not ideal. 
 
-### Brute Force Big O Space Calculation :stars: 
+### Brute Force Big O Space Calculation :stars:
+
 The advantage of the Brute Force solution stems from its ability to avoid storing data to find the two sum positions. The space calculation for this solution is $O(1)$ also known as constant space. Constant space lets us know that this algorithm's space requirement stays constant throughout execution of the program, which means that this algorithm can run on systems with space deficits. So if you have a lack of memory the Brute force solution is for you. 
----
-## Hashmap 
+
+
+## Hashmap
+
 The hashmap method of solving the two sum leetcode problem focuses on efficiency as a means of solving this problem. We first initialize the dictionary with the array values as the keys and the array indexes as the values. We find the complement which would be the target value subtracted by the current value to determine one half of the addition that will equal the target. That way we can stop prior to getting to the end of the dictionary once we find the two values that add up to the target. Moreover, the speed of the lookup is much faster because it does not need to iterate through each value it just needs to find the complement. 
 
 ### High-Level Steps:
