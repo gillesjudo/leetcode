@@ -178,18 +178,26 @@ var twoSum = function(nums, target) {
 ```mermaid
 flowchart TD
 
-A(Start) --> B[/Get array and target/]
-B --> C[/Step 1: Initialize the hashmap /]
-C --> D[/Step 2: Iterate array values through hashmap/]
-D --> E[/Step 3: Create the complement/]
-E --> F[/Step 4: Initiate search for complement/]
-F -- Yes --> G[/Step 5: Return the two sum indexes/]
-F -- No --> D;
+A([Start]) --> B[/Get array and target/]
+B --> C[Step 1: Initialize the hashmap]
+C --> D[Step 2: Loop through each element and its index]
+D --> E[Step 3: Calculate the complement]
+E --> F[Step 4: Search for complement in the hashmap]
+F --> G{Step 5: If complement is found in hashmap}
+G -- Yes --> H[/Step 6: Return the two sum indexes/]
+G -- No --> I[/add current value to hashmap /];
+I--> k[Move to next element in the loop]
+H --> J([end])
+k --> G
 ```
 
-### Hashmap Big O Time  Calculation :clock1:
+### Hashmap Big O Time Calculation :clock1:
 
-The calculation for the brute force solution is $O(n)$. 
+The time calculation for the hashmap two sum solution is $O(n)$ which is called linear time. The hashmap only requires one true operation within the for loop which is an if statement that looks within the hashmap for the complement without needing to immediately initialize all the values into the full hashmap. This advantage allows for the application time to grow in proportion with the size of the input `n`. This makes the program much faster than the brute force method which grows quadratically with inputs. 
 
 ### Hashmap Big O Space Calculation :stars: 
-The calculation for the Brute force solution space requirement is $O(n)$. 
+The calculation for Hashmap solution space requirement is $O(n)$ which just like the hashmap solution is linear space. This is because the value of hashmap in my expression grows with each interation of the loop. So in the worst case scenario where one of the values in the two sum is the final index the hashmap can grow to the size of the array that was inputted. This space requirement is the drawback that makes the brute force method much more space efficient than the hashmap solution. 
+
+## Cyber Security Tie in :tie:
+
+
