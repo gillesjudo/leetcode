@@ -52,21 +52,15 @@ func twoSum(nums []int, target int) []int {
 
 ~~~
 
-### Javascript Solution
+### Typescript Solution
 
 ```
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
+function twoSum(nums: number[], target: number): number[] {
     for (let x = 0; x < nums.length; x++) {
-        for (let y = x + 1; y < nums.length; y++) {
-            let sums = nums[y] + nums[x]
-            if (sums == target) {
-                return [x,y] 
-            }
+    for (let y = x + 1; y < nums.length; y++) {
+        let sums = nums[y] + nums[x]
+        if (sums == target) 
+               return [x,y] 
         }
     }
 };
@@ -149,25 +143,19 @@ func twoSum(nums []int, target int) []int {
     return []int{}
 } 
 ~~~          
-### Javascript Solution 
+### Typescript Solution 
 
 ~~~
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
+function twoSum(nums: number[], target: number): number[] {
     let hashmap = {};
-    
+
     for (const [ind, val] of nums.entries()) {
-       // console.log(ind, val);
-        complement = target - val; 
-        // console.log(complement);
+        let complement = target - val;
+
         if (complement in hashmap) {
             return [hashmap[complement], ind];
         } else {
-            hashmap[val]=ind;
+            hashmap[val] = ind;
         }
     }
 };
