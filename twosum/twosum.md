@@ -186,6 +186,6 @@ The time calculation for the hashmap two sum solution is $O(n)$ which is called 
 ### Hashmap Big O Space Calculation :stars: 
 The calculation for Hashmap solution space requirement is $O(n)$ which just like the hashmap solution is linear space. This is because the value of hashmap in my expression grows with each interation of the loop. So in the worst case scenario where one of the values in the two sum is the final index the hashmap can grow to the size of the array that was inputted. This space requirement is the drawback that makes the brute force method much more space efficient than the hashmap solution. 
 
-## Cyber Security Tie in :tie:
+## Cyber Security Tie in :bowtie:
 
 
