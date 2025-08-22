@@ -187,18 +187,3 @@ The time calculation for the hashmap two sum solution is $O(n)$ which is called 
 The calculation for Hashmap solution space requirement is $O(n)$ which just like the hashmap solution is linear space. This is because the value of hashmap in my expression grows with each interation of the loop. So in the worst case scenario where one of the values in the two sum is the final index the hashmap can grow to the size of the array that was inputted. This space requirement is the drawback that makes the brute force method much more space efficient than the hashmap solution. 
 
 ## Cyber Security Tie in :bowtie:
-
-We can use the two sum algorithm to create a program that takes the output of a network scan and correlate the data within the output when two items within are true. A good way to think about this is when it is a Windows machine with the SMB1 port open. In isolation port 445 being open is not always a big deal, but that on an end of life operating system is a recipe for disaster. 
-
-### High-Level Steps:
-
-### Diagram Steps 
-
-### Golang Script 
-
-### Typescript Script 
-
-### Big O Time 
-
-### Big O Space
-
