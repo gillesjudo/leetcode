@@ -2,6 +2,12 @@
 
 The two sum problem is a problem which takes an array and a target and attempts to determine which index values when added together can equal the target number. This problem is meant to test the user's understanding of indexing, loops and algorithmic thinking. The below is solutions I came up with for these problems and the advantages to each solution. 
 
+## Table of Contents 
+1. [Brute Force](#brute-force)
+2. [Hashmap](#hashmap)
+3. [CyberTieIn](#cyber-security-tie-in-bowtie)
+
+
 ## Brute force 
 
 The brute force method of solving the two sum leetcode problem specifically focuses on testing every position within the array until we arrive at the positions that equal the target. This method is a great simple way to solve this problem and works well when an array is shorter. 
